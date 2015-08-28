@@ -46,46 +46,42 @@ h3,
 h4,
 h5,
 h5 {
-  margin-top: 3rem;
-  margin-bottom: .8rem;
   font-family: $serif-font;
   font-weight: lighter;
   color: $gray-darkest;
   -webkit-font-smoothing: antialiased;
 }
 h1 {
-  margin-top: 0;
-  font-size: 2.3rem;
+  margin: $margin-h1 0;
+  font-size: $font-h1;
   line-height: 3rem;
-  letter-spacing: .05rem;
 }
 h2 {
-  font-size: 1.6rem;
+  margin: $margin-h2 0;
+  font-size: $font-h2;
 }
 h3 {
-  font-size: 1.3rem;
+  margin: $margin-h3 0;
+  font-size: $font-h3;
 }
 h4 {
-  font-size: 1.05rem;
+  margin: $margin-h4 0;
+  font-size: $font-h4;
 }
 h5 {
-  font-size: .85rem;
+  margin: $margin-h5 0;
+  font-size: $font-h5;
 }
 h6 {
-  font-size: .66rem;
+  margin: $margin-h6 0;
+  font-size: $font-h6;
 }
 p {
   margin-bottom: 1.3rem;
   line-height: 1.7rem;
 
   > code {
-    border: 1px solid #D9D9D9;
-    border-radius: 3px;
-    padding: 0.09rem 0.2rem;
-    font-family: $code-font;
-    font-weight: $font-weight-normal;
-    font-size: .85rem;
-    color: $gray-dark;
+    @include inline-code-style
   }
 }
 strong {
@@ -129,6 +125,10 @@ ol {
 }
 ul {
   list-style-type: disc;
+}
+
+li > code {
+ @include inline-code-style
 }
 
 pre {
@@ -183,7 +183,7 @@ pre:hover {
   width: $total-width - $gutter-width;
   margin: 0 auto;
 }
-.main {
+main {
   position: absolute;
   top: 0;
   right: 0;
@@ -191,8 +191,12 @@ pre:hover {
   left: 22.5rem;
   padding: 2rem 3rem;
 
+  &.expanded {
+    overflow: hidden
+  }
+
   > .content {
-    padding: 4rem 0;
+    padding: 2rem 0;
     margin: 0 3.7rem;
 
     > h1 {

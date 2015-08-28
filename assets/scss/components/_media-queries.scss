@@ -3,7 +3,7 @@
 // ------------------------------
 
 @media only screen and (min-width:1824px) {
-  .main {
+  main {
     padding: 2.5rem 11rem;
   }
   .content {
@@ -19,7 +19,7 @@
   /* disabling element, too much information*/
   .pace,
   .post.reading-time,
-  #back-button {
+  .post.related {
     display: none;
   }
   #search-container {
@@ -116,7 +116,7 @@
       }
     }
   }
-  .main {
+  main {
     left: 0;
     transition: all $aside-animation-time;
     transform: translate3d(0, 0, 0);
@@ -147,7 +147,7 @@
     display: block;
     margin-bottom: .4em;
   }
-  .main {
+  main {
     padding: 1rem 0;
   }
   .mayday {
@@ -171,14 +171,13 @@
   #post-title {
     margin: 2.5rem 0;
   }
-  body[data-page='post'] {
-    .post.tags {
-      > a {
-        display: inline-block;
-        margin: .2rem 0;
-      }
-    }
+
+  .post .tags,
+  .post .meta > time,
+  .pagination > span {
+      display: none;
   }
+
   .post {
     &.newer,
     &.older {
@@ -191,11 +190,7 @@
       margin: 0 0 10px;
     }
   }
-  .pagination {
-    > span {
-      display: none;
-    }
-  }
+
   blockquote {
     > p {
       margin: 2rem -1rem;

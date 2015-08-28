@@ -112,29 +112,38 @@ As the screenshot, you need to use for the proxying the same port as your Ghost 
 
 ### Google Analytics
 
-Edit `partials/google-analytics.hbs` put your [Google Analytics](http://www.google.com/analytics) domain ID in the line 6 like:
+Go to Ghost admin panel -> `Code Injection` -> `Blog Header` and add:
 
-```
-ga('create', 'UA-YOURIDHERE', 'auto');
+```html
+<script>
+var ga_id = 'UA-YOUR_ID_HERE';
+</script>
 ```
 
 ### Comments
 
-Edit `partials/comments.hbs` and put your [Disqus](https://disqus.com) shorcut in the line 5 like:
+Go to Ghost admin panel -> `Code Injection` -> `Blog Header` and add:
 
+```html
+<script>
+var disqus_shortname = 'YOUR_DISQUS_SHORTCUT_HERE';
+</script>
 ```
-var disqus_shortname = 'myShorcut';
+
+### Sidebar title and subtitle
+
+Go to Ghost admin panel -> `Code Injection` -> `Blog Header` and add:
+
+```html
+<script>
+var profile_title = 'Kiko Beats';
+var profile_resume ='Software Engineer';
+</script>
 ```
-
-### Sidebar Name
-
-Edit the file `partials/aside.hbs` and change the name to show modifying the `h1` header.
-
-The description is automatically obtained from the description of the blog.
 
 ### Colors
 
-Edit the file `assets/scss/modules/_variables.scss`.
+Edit the file `assets/scss/modules/_variables.scss`. Remember that is necessary compile the build to load the new style, so keep running your gulp process in background.
 
 ### Social Networks
 
@@ -142,7 +151,9 @@ Edit the file `partials/social.hbs`.
 
 ### Links
 
-Edit the file `partials/links.hbs`
+Go to Ghost admin panel -> `Navigation` and add/edit items.
+
+"Blog" link is always included by default, so you don't need to add it manually.
 
 ### Favicon
 
@@ -158,7 +169,7 @@ Check the [page part](http://themes.ghost.org/v0.6.4/docs/page-context) in the G
 
 ### Multiaccount support
 
-You can enable the multiaccount support for post editing the `posts.hbs` and editing the code commented inside the meta post information.
+You can enable the multiaccount support editing `posts.hbs` code commented inside the meta post information.
 
 ## Preparing for production
 

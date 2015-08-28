@@ -1,8 +1,9 @@
 'use strict'
 
 $ ->
+
   window.Uno = Uno =
-    version: '2.2.5'
+    version: '2.3.5'
 
     search:
       container: -> $('#results')
@@ -32,7 +33,6 @@ $ ->
           $(this).html(postDateInDays)
           $(this).mouseover -> $(this).html(postDate)
           $(this).mouseout -> $(this).html(postDateInDays)
-        cb?()
       DateInDays ".post.meta > time"
 
     device: ->

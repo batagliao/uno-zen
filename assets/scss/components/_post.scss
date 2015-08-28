@@ -23,7 +23,7 @@
   }
 }
 
-section.post {
+#post-content {
   a {
     transition: all $aside-animation-time;
 
@@ -54,12 +54,7 @@ section.post {
   pre {
     width: 95%;
   }
-  hr {
-    display: block;
-    width: 30%;
-    margin: 2em 0;
-    border-top: 1px solid $gray-light;
-  }
+
   > header {
     text-align: center;
   }
@@ -89,9 +84,8 @@ section.post {
     }
   }
   &.author {
-    margin-left: 1.2em;
-
     img {
+      margin: 0 0.5rem;
       display: inline-block;
       height: 22px;
       vertical-align: middle;
@@ -100,19 +94,21 @@ section.post {
     }
   }
   &.comments {
-    padding: 3.75rem 0;
-    border-top: 1px solid $gray-light;
+    padding: 2rem 0 0 0;
+  }
+
+  &.related {
+    display: flex;
+    justify-content: space-between;
+    padding: 4rem 0 2rem 0;
   }
 }
-#back-button {
-  position: absolute;
-  top: 2rem;
-  left: 2rem;
-}
+
 #post-image {
   max-width: 100%;
   margin-top: 1rem;
 }
+
 #post-title {
   margin: 3rem 0 2.5rem;
   transition: all $aside-animation-time;
